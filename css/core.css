@@ -15,31 +15,49 @@ footer{
     margin-top: 1rem;
     padding-top: 1rem;
     color: gray;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 h1{
     font-family: 'Arvo', cursive;
-    font-size: 5rem;
+    font-size: 3.5rem;
     text-shadow: 2px 0 #DA0463;
     margin-top: 0;
     padding-top: 1rem;
 }
 
+
+
 .card_row{
-    display: flex;
-    flex-wrap: wrap;
-    flex: 0 0 1;
-    justify-content: center;
-    gap: 2rem;
-    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
     margin: auto;
 }
 
+.card_row :nth-child(4){
+    grid-column:  2/3;
+    grid-row: 1/2;
+}
+.card_row :nth-child(1),
+.card_row :nth-child(2),
+.card_row :nth-child(3){
+    grid-row: 2/3;
+}
+
+.card_row :nth-child(5),
+.card_row :nth-child(6),
+.card_row :nth-child(7){
+    grid-row: 3/4;
+}
+
+
+
 .card{
-    width: 11rem;
-    height: 11rem;
-    font-size: 4rem;
+    width: 8rem;
+    height: 8rem;
+    font-size: 2.5rem;
     line-height: 3;
     border: .8rem solid #404B69;
     border-radius: 1rem;
@@ -76,4 +94,39 @@ h1{
 
 .press{
     background-color: #283149;
+}
+
+/* ====================================================================== */
+/*                           LARGE SCREEN LAYOUT                          */
+/* ====================================================================== */
+
+
+@media screen and (min-width: 992px){
+
+
+    footer{
+        font-size: 1.5rem;
+    }
+
+    h1{
+        font-size: 5rem;
+    }
+
+    .card_row{
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 1;
+        justify-content: center;
+        width: 60%;
+        gap: 1.5rem;
+        margin: auto;
+        border:1px solid #DA0463;
+    }
+
+    .card{
+        width: 11rem;
+        height: 11rem;
+        font-size: 4rem;
+    }
+    
 }
